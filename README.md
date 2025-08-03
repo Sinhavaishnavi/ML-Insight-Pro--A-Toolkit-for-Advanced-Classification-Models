@@ -7,6 +7,9 @@
 This Streamlit application provides an interactive environment to explore and compare **three advanced machine learning models** for **customer churn prediction**. It is designed to demonstrate how different classifiers handle **class imbalance**, visualize decision boundaries, and interpret model performance with real-world datasets.
 
 ---
+<img width="1912" height="834" alt="Screenshot 2025-08-03 205809" src="https://github.com/user-attachments/assets/50689285-67cb-475a-a1fb-003fe4857ab5" />
+<img width="1915" height="844" alt="Screenshot 2025-08-03 205917" src="https://github.com/user-attachments/assets/18f621fd-482f-4dda-b92a-746f75b709f6" />
+<img width="1919" height="847" alt="Screenshot 2025-08-03 205947" src="https://github.com/user-attachments/assets/14d638db-1f71-488f-a97e-e01b1644b3f9" />
 
 ## 📌 Features
 
