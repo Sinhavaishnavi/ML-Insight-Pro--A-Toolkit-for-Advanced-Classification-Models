@@ -1,132 +1,150 @@
+🧠 ML-Insight Pro: A Toolkit for Advanced Classification Models
 
+This Streamlit application provides an interactive environment to explore and compare six advanced machine learning models for customer churn prediction. It is designed to demonstrate how different classifiers handle class imbalance, visualize model behavior, and interpret performance with real-world datasets.
+<img width="1359" height="844" alt="image" src="https://github.com/user-attachments/assets/fbbd55b6-4a60-4037-9a99-17677dcc365a" />
+<img width="1344" height="848" alt="image" src="https://github.com/user-attachments/assets/2b7aac8a-2c1e-4437-90b5-404ff04c8cf1" />
+<img width="1351" height="854" alt="image" src="https://github.com/user-attachments/assets/afd381bf-8401-4e01-a88b-516fdc1f1ef3" />
+<img width="1350" height="941" alt="image" src="https://github.com/user-attachments/assets/392c4f90-e7d0-4968-867b-116f5552ada0" />
+<img width="1354" height="862" alt="image" src="https://github.com/user-attachments/assets/d00cdd64-3e39-4c7a-bd9c-5d7933b4183a" />
 
----
+📌 Features
 
-# 🧠Churn Prediction Web App
+    Interactive UI built with Streamlit and a custom dark theme.
 
-This Streamlit application provides an interactive environment to explore and compare **three advanced machine learning models** for **customer churn prediction**. It is designed to demonstrate how different classifiers handle **class imbalance**, visualize decision boundaries, and interpret model performance with real-world datasets.
+    Six ML models implemented:
 
----
-<img width="1912" height="834" alt="Screenshot 2025-08-03 205809" src="https://github.com/user-attachments/assets/50689285-67cb-475a-a1fb-003fe4857ab5" />
-<img width="1915" height="844" alt="Screenshot 2025-08-03 205917" src="https://github.com/user-attachments/assets/18f621fd-482f-4dda-b92a-746f75b709f6" />
-<img width="1919" height="847" alt="Screenshot 2025-08-03 205947" src="https://github.com/user-attachments/assets/14d638db-1f71-488f-a97e-e01b1644b3f9" />
+        🌳 Random Forest with hyperparameter tuning.
 
-## 📌 Features
+        ✒️ Support Vector Machine (SVM) with kernel comparison.
 
-* **Interactive UI built with Streamlit**
-* **Three ML models** implemented:
+        🤖 Neural Network (Keras) with customizable architecture.
 
-  * 🌳 **Random Forest** with hyperparameter tuning and feature importance
-  * ✒️ **Support Vector Machine (SVM)** with kernel comparison and decision boundary visualization
-  * 🤖 **Neural Network (Keras)** with customizable architecture and training metrics
-* **Imbalanced dataset handling** using `class_weight='balanced'`
-* **Visualization tools**:
+        💡 LightGBM with performance tuning.
 
-  * Confusion matrix
-  * Feature importance bar plot
-  * SVM decision boundaries
-  * Neural network training loss and accuracy over epochs
-* Custom **dark theme UI** for a polished look
+        🐈 CatBoost for robust classification.
 
----
+        🚀 XGBoost, a competition-winning classic.
 
-## 📂 Dataset
+    Flexible Imbalance Handling: Toggle SMOTE (Synthetic Minority Over-sampling Technique) on or off. Models automatically use internal methods (class_weight or scale_pos_weight) when SMOTE is disabled.
 
-The app uses the **Telco Customer Churn** dataset from Kaggle, split into:
+    Rich Visualization Tools:
 
-* `churn-bigml-80.csv` (80% training)
-* `churn-bigml-20.csv` (20% testing)
+        Confusion matrices for all models.
 
-Ensure both files are placed in the project directory.
+        Feature importance plots for tree-based models.
 
----
+        Interactive SVM decision boundary visualization.
 
-## 🚀 How to Run
+        Neural network training/validation curves.
 
-1. **Clone the repository** or download the files.
-2. Place `churn-bigml-80.csv` and `churn-bigml-20.csv` in the root directory.
-3. Install the required libraries:
+    Easy Navigation: A "Go Back" button on each model page simplifies returning to the home screen.
 
-   
-4. Run the app:
+📂 Dataset
 
-   ```bash
-   streamlit run your_script_name.py
-   ```
+The app uses the Telco Customer Churn dataset, which is a combination of two files:
 
----
+    churn-bigml-80.csv
 
-## 🧪 Model Performance Summary
+    churn-bigml-20.csv
 
-### 🌳 Random Forest
+Ensure both files are present in the project's root directory before running the app.
 
-* **Hyperparameters**: `n_estimators=150`, `max_depth=10`
-* **Handling Imbalance**: `class_weight='balanced'`
-* **Performance**:
+🚀 How to Run
 
-  * Precision, Recall, F1-score shown per class
-  * 5-Fold CV Accuracy (e.g.): `~84% ± 1.2%`
+    Clone the repository or download the project files.
 
-### ✒️ Support Vector Machine (SVM)
+    Place the dataset files (churn-bigml-80.csv and churn-bigml-20.csv) in the same directory as the script.
 
-* **Kernel**: RBF / Linear / Polynomial (user-selectable)
-* **Performance (on all features)**:
+    Install the required libraries. It's recommended to use a requirements.txt file.
 
-  * Accuracy: **76.38%**
-  * Precision: **36.23%**
-  * Recall: **82.64%**
-  * F1-Score: **50.38%**
-  * AUC Score: **0.847**
-* **Interactive boundary plot** for any 2 features
+    requirements.txt:
 
-### 🤖 Neural Network (Keras)
+    streamlit
+    pandas
+    numpy
+    scikit-learn
+    imbalanced-learn
+    tensorflow
+    matplotlib
+    seaborn
+    plotly
+    lightgbm
+    catboost
+    xgboost
 
-* **Architecture**: Configurable layers, dropout
-* **Class Weighting**: Automatically applied
-* **Test Accuracy**: **87.77%**
-* **Additional Outputs**:
+    Install them using pip:
+    Bash
 
-  * Training vs Validation loss
-  * Training vs Validation accuracy
-  * Classification Report
+pip install -r requirements.txt
 
----
+Run the app from your terminal:
+Bash
 
-## 🛠️ Tech Stack
+    streamlit run app.py
 
-* **Frontend**: [Streamlit](https://streamlit.io/)
-* **ML Frameworks**:
+🧪 Models Overview
 
-  * Scikit-learn
-  * TensorFlow / Keras
-* **Data Visualization**:
+Each model page provides a unique set of interactive controls and performance visualizations.
 
-  * Plotly
-  * Seaborn
-  * Matplotlib
-* **Styling**: Custom dark theme via embedded CSS
+🌳 Random Forest, 💡 LightGBM, 🐈 CatBoost, 🚀 XGBoost
 
----
+    Tune Hyperparameters: Interactively adjust key parameters like the number of estimators, tree depth, and learning rate.
 
-## 🧠 What You'll Learn
+    Interpret Results: Analyze performance with a detailed classification report, a confusion matrix, and a feature importance plot to see which factors drive churn.
 
-* How different ML models behave under class imbalance
-* Importance of model interpretability (e.g., feature importances)
-* Visual decision boundaries in high-dimensional classification
-* How neural networks can outperform traditional models in certain use-cases
+✒️ Support Vector Machine (SVM)
 
----
+    Compare Kernels: Switch between rbf, linear, and poly kernels to see how they impact classification.
 
-## 👩‍💻 Author
+    Visualize Boundaries: An interactive plot shows the decision boundary for any two selected features, offering a clear view of how the SVM separates data points.
 
-**Vaishnavi Sinha**
-Made with ❤️ .
+🤖 Neural Network (Keras)
 
----
+    Customize Architecture: Define the number of hidden layers, neurons per layer, and regularization strength.
 
-## 📜 License
+    Track Training: After training, view plots of training vs. validation accuracy and loss to diagnose overfitting or underfitting.
+
+🛠️ Tech Stack
+
+    Frontend: Streamlit
+
+    ML Frameworks:
+
+        Scikit-learn
+
+        TensorFlow / Keras
+
+        LightGBM
+
+        CatBoost
+
+        XGBoost
+
+        Imbalanced-learn
+
+    Data Visualization:
+
+        Plotly
+
+        Seaborn
+
+        Matplotlib
+
+🧠 What You'll Learn
+
+    How different ML models, from ensembles to neural networks, tackle a classification problem.
+
+    The effect of techniques like SMOTE on handling class imbalance.
+
+    The importance of model interpretability through feature importance plots.
+
+    How to compare the performance and behavior of different gradient boosting implementations (LGBM, CatBoost, XGBoost).
+
+👩‍💻 Author
+
+Vaishnavi Sinha
+<br>Made with ❤️.
+
+📜 License
 
 This project is open-sourced under the MIT License.
-
----
-
